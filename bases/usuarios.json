@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "email": "vitor@gmail.com",
+        "nome": "Vitor",
+        "senha": "Pao123",
+        "cpf": "50188517839",
+        "tipo": "paciente",
+        "crm": "0"
+    },
+    {
+        "id": 1,
+        "email": "andre@gmail.com",
+        "nome": "Andre",
+        "senha": "Pao123",
+        "cpf": "79724665054",
+        "tipo": "medico",
+        "crm": "12345678"
+    }
+]
