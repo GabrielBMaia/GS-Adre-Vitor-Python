@@ -70,6 +70,7 @@ while True:
                         case '5':
                             usuario.fluxo_altera_senha(usuarioCorrente["id"], usuarios)
                         case '0':
+                            limpa_a_tela()
                             break
                         case _:
                             limpa_a_tela()
@@ -79,12 +80,19 @@ while True:
                     opcaoMedico = input('Insira a opção desejada: ')
                     match opcaoMedico:
                         case '1':
-                            usuario.ver_entradas(entradas, usuarioCorrente)
+                            entrada.fluxo_cadastra_entrada(entradas, usuarioCorrente)
                         case '2':
-                            usuario.ver_compartilhamentos(compartilhamentos, usuarioCorrente)
+                            entrada.mostra_entradas(entradas, usuarioCorrente)
                         case '3':
-                            usuario.alterar_senha(usuarios, usuarioCorrente)
+                            entrada.fluxo_compartilha_historico(usuarios, compartilhamentos, usuarioCorrente)
+                        case '4':
+                            entrada.mostra_compartilhamentos(compartilhamentos, usuarioCorrente, usuarios)
+                        case '5':
+                            usuario.fluxo_ver_pacientes(usuarioCorrente, usuarios, compartilhamentos, entradas)
+                        case '6':
+                            usuario.fluxo_altera_senha(usuarioCorrente["id"], usuarios)
                         case '0':
+                            limpa_a_tela
                             break
                         case _:
                             limpa_a_tela()

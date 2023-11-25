@@ -1,5 +1,6 @@
 import os
 import funcoes.escritaArquivo as escritaArquivo
+import funcoes.entrada as entrada
 limpa_a_tela = lambda: os.system('cls')
 
 def cadastrar_usuario(DbUsuarios):
@@ -24,7 +25,7 @@ def cadastrar_usuario(DbUsuarios):
         break
 
     while True:
-        tipo = input('Digite o tipo do usuário: (medico ou paciente)')
+        tipo = input('Digite o tipo do usuário: (medico ou paciente)\n')
         if(tipo != "medico" and tipo != "paciente"):
             limpa_a_tela()
             print('O tipo deve ser medico ou paciente!')
@@ -123,6 +124,30 @@ def fluxo_altera_senha(idUser, DbUsers):
             limpa_a_tela()
             print('Nova senha cadastrada!')
 
+def fluxo_ver_pacientes(usuarioCorrente, DbUsuarios, DbCompartilhamentos, DbEntradas):
+    limpa_a_tela()
+    print('==========================')
+    print('||      PACIENTES       ||')
+    print('==========================')
+
+    compartilhamentosComMedicoCorrente = []
+    usuariosQueCompartilharam = []
+
+    for compartilhamento in DbCompartilhamentos:
+        if compartilhamento['idMedico'] == usuarioCorrente['id']:
+            compartilhamentosComMedicoCorrente.append(compartilhamento)
+            usuariosQueCompartilharam.append(DbUsuarios[compartilhamento['idPaciente']])
+
     
-
-
+    for i, usuario in enumerate(usuariosQueCompartilharam, start=1):
+        print(f"{i}. CPF: {usuario['cpf']} - Nome: {usuario['nome']}")
+        print('==========================')
+    
+    paciente = ''
+    while True:
+        paciente = input("Digite o número do paciente que deseja ver o histórico: ")
+        if paciente == '' or 0 >= int(paciente) or int(paciente) > len(usuariosQueCompartilharam):
+            print('Opção inválida!')
+            continue
+        break
+    entrada.mostra_entradas(DbEntradas, usuariosQueCompartilharam[int(paciente)-1])

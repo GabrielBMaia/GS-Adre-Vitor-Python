@@ -30,13 +30,13 @@ def fluxo_cadastra_entrada(entradas, usuarioCorrente):
     entradas.append(entrada)
     escritaArquivo.sobrescreve_entradas(entradas)
 
-def mostra_entradas(entradas, usuarioCorrente):
+def mostra_entradas(entradas, usuario):
     limpa_a_tela()
     print('==========================')
     print('||      ENTRADAS        ||')
     print('==========================')
     for entrada in entradas:
-        if entrada['idUser'] == usuarioCorrente['id']:
+        if entrada['idUser'] == usuario['id']:
             print(f"Nome: {entrada['nome']}")
             print(f"Descrição: {entrada['descricao']}")
             print('==========================')
@@ -80,3 +80,4 @@ def mostra_compartilhamentos(compartilhamentos, usuarioCorrente, usuarios):
         if compartilhamento['idPaciente'] == usuarioCorrente['id']:
             print(f"Médico: {usuarios[compartilhamento['idMedico']]['nome']}")
             print('==========================')
+

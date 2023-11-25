@@ -1,3 +1,1 @@
-[{"nome": "Diabetes", "descricao": "Diabetes Melitus tipo 1 diagnosticada em 2019", "idUser": 0, "id": 0}, 
-{"nome": "H\u00e9rnia de Disco", "descricao": "H\u00e9rnia de Disco Lombar em L5-S1 diagnosticada em 2018", "idUser": 0, "id": 1}, 
-{"nome": "Miopia", "id": 2, "idUser": 0, "descricao": "grau 2"}]
+[{"nome": "Diabetes", "descricao": "Diabetes Melitus tipo 1 diagnosticada em 2019", "idUser": 0, "id": 0}, {"nome": "H\u00e9rnia de Disco", "descricao": "H\u00e9rnia de Disco Lombar em L5-S1 diagnosticada em 2018", "idUser": 0, "id": 1}, {"nome": "Miopia", "id": 2, "idUser": 0, "descricao": "grau 2"}, {"nome": "teste", "id": 3, "idUser": 1, "descricao": "teste"}, {"nome": "Miopia", "id": 4, "idUser": 2, "descricao": "2 graus de miopia"}, {"nome": "Teste", "id": 5, "idUser": 0, "descricao": "Teste"}, {"nome": "teste2", "id": 6, "idUser": 0, "descricao": "teste2"}]
